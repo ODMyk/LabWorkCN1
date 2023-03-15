@@ -17,10 +17,10 @@ Client::~Client() {
 }
 
 void Client::guess(unsigned int timeout) {
-	int valread = 0;
 	unsigned int number = 0;
 
 	send("start " + std::to_string(timeout));
+	read();
 
 	while (command.compare("stop")) {
 		command = "0";

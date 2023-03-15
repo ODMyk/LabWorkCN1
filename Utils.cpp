@@ -1,6 +1,6 @@
 #include "Utils.hpp"
 
-void Utils::parse(std::string& line, std::string& command, std::vector<std::string> &args) {
+void Utils::parse(std::string line, std::string& command, std::vector<std::string> &args) {
 	line = line.substr(0, SIZE);
 	int ind, ind2;
 	std::string arg;

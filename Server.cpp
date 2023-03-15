@@ -50,7 +50,7 @@ void Server::guess(unsigned int timeout) {
 		if (command.compare("guess") || args.size() != 1) {
 			end = std::chrono::high_resolution_clock::now().time_since_epoch();
 			duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count();
-			send("Wrong");
+			send("No commands, but guess are polled while guess session is ative");
 			continue;
 		}
 
@@ -60,7 +60,7 @@ void Server::guess(unsigned int timeout) {
 
 		end = std::chrono::high_resolution_clock::now().time_since_epoch();
 		duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count();
-		send("Accepted");
+		send("Guess accepted");
 	}
 	read();
 	if (closest != number) {
